@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+@font-face {
+    font-family: mugglenews;
+    src: url(../fonts/mugglenews_by_nathanthenerd_d41qn8p.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    margin: 10px;
+}
+
+/* BOX */
+.container {
+    overflow: auto;
+    z-index: 3;
+    max-width: 80%;
+    width: 100%;
+    padding: 5%;
+    color: #000;
+    background-color: black;
+}
+
+.box {
+    float:left;
+    text-align: center;
+    max-width: 30%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: 1px solid white;
+    padding: 25px 30px;
+    margin: 10px;
+    font-family: mugglenews, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.percentage {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 30px;
+}
+
+.percentage span {
+    padding: 10px;
+}
+
+.container .result {
+    color: white;
+    font-family: mugglenews, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.container .result .keys {
+    font-family: 'Roboto Condensed', sans-serif;;
+    font-size: 20px;
+}
+
+.container .result .keys .centered {
+    text-align: center;
+}
+
+.container .result .keys .gryffindor, .box .percentage .gryffindor {
+    color: #AE0001;
+}
+
+.container .result .keys .hufflepuff, .box .percentage .hufflepuff {
+    color: #FFDB00;
+}
+
+.container .result .keys .ravenclaw, .box .percentage .ravenclaw {
+    color: #41A6D9;
+}
+
+.container .result .keys .slytherin, .box .percentage .slytherin {
+    color: #49a768;
+}
+
+.container .result img {
+    z-index: 3;
+    width: 10%;
+    height: 10%;
+}
+
+.box .percentage img {
+    z-index: 3;
+    width: 15%;
+    height: 15%;
+}
+
+
+/* BACKGROUND */
+@keyframes shiny-stars {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+.stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0) url(../images/stars.png) repeat top center;
+    z-index: 0;
+}
+
+.shine {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/shine.png) repeat top center;
+    z-index: 1;
+    animation: shiny-stars 200s linear infinite;
+}
+
+/* BUTTON */
+
+
+.buttons {
+    font-family: 'Roboto Condensed', sans-serif;
+    z-index: 3;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+}
+
+.buttons a {
+    z-index: 3;
+    position: relative;
+    width: 160px;
+    height: 60px;
+    display: inline-block;
+    background: white;
+    margin: 20px;
+    }
+
+.buttons a:before, .buttons a:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(65deg, #AE0001, #FFDB00, #41A6D9, #49a768);
+}
+
+.buttons a:hover:before {
+    inset: -3px;
+}
+
+.buttons a:hover:after {
+    inset: -3px;
+    filter: blur(10px);
+}
+
+.buttons a span {
+    position: absolute;
+    top: 0;
+    Left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: rgb(0, 0, 0);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    border: 0.5px solid rgb(255, 255, 255);
+}
